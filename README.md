@@ -57,6 +57,8 @@ Create the project with composer:
 
 ```bash
 composer create-project nfgarching/laravel-starter {project_name} --stability=dev
+composer create-project nfgarching/laravel-starter --repository-url=http://repo.yourcomposerrepo.com
+
 ```
 
 
