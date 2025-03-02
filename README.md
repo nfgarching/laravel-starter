@@ -69,6 +69,14 @@ php artisan serve
 
 ```
 
+## Bootstrap 5
+
+### Default with CDN
+
+### Alt. with sail
+
+### Alt. with vite
+
 ## Introduction
 
 This Template should be used by copy some needed parts to extend your debug possibilitys and speed up development.
