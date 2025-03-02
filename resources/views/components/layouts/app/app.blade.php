@@ -1,10 +1,37 @@
 <!DOCTYPE html>
+@php
+    if (config('app.env') == 'production') {
+        $bgcolor = 'bg-dark';
+        $favicon = 'favicon/faviconBlack.ico';
+    } else {
+        if (env('DB_AKV_HOST') == '192.168.178.5' && config('filesystems.data_disk') == 'data') {
+            $bgcolor = 'bg-primary';
+            $favicon = 'favicon/faviconBlue.ico';
+        } else {
+            if (env('DB_AKV_HOST') != '192.168.178.5' && config('filesystems.data_disk') != 'data') {
+                $bgcolor = 'bg-success';
+                $favicon = 'favicon/faviconGreen.ico';
+            } else {
+                $bgcolor = 'bg-danger';
+                $favicon = 'favicon/faviconRed.ico';
+            }
+        }
+    }
+    if (config('filesystems.data_disk') == 'data' && !Storage::disk('data')->exists('/' . date('Y'))) {
+        $bgcolor = 'bg-warning';
+        $favicon = 'favicon/faviconYellow.ico';
+    }
+@endphp
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
-
-<head> @include('partials.head') </head>
+@include('components.layouts.head')
 
 <body>
+
+    @include('components.layouts.navbar')
+    @include('components.layouts.modals')
+    @include('components.layouts.toasts')
+    @include('components.layouts.toasts-message')
 
     <div class="container-fluid">
         <div class="row">
@@ -21,9 +48,9 @@
                 @session('alert-message')
                     <div x-init="$dispatch('show-message', { message: '{{ $value }}' })"></div>
                     {{-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Wichtig!</strong> {{ Session::get('alert-message') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div> --}}
+                        <strong>Wichtig!</strong> {{ Session::get('alert-message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> --}}
                 @endsession
                 @session('toast-message')
                     <div x-init="$dispatch('show-toast', { message: '{{ $value }}' })"></div>
@@ -44,6 +71,8 @@
             <!--Container Main end-->
         </div>
     </div>
+
+    @include('components.layouts.script')
 
 </body>
 
