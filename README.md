@@ -1,5 +1,8 @@
 # Laravel 12 Template with Livewire Auth + Bootstrap 5.3
 
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -50,6 +53,14 @@ Without node_modules
 
 ## Installation
 
+Create the project with composer:
+
+```bash
+composer create-project nfgarching/laravel-starter {project_name} --stability=dev
+```
+
+
+
 ``` bash
 # clone the repo
 git clone  my-project
@@ -68,6 +79,22 @@ php artisan migrate
 php artisan serve
 
 ```
+
+## To sync with template repo
+
+Run this command
+
+```
+git remote add template https://github.com/laravel-ready/laravel-starter
+git fetch --all
+git merge template/main --allow-unrelated-histories
+```
+
+## Documentation
+
+You can find the documentation **[here](./DOCS.md).**
+
+Photo by <a href="https://unsplash.com/@sebastiansvenson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sebastian Svenson</a> on <a href="https://unsplash.com/photos/c10tq-bB52Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## Bootstrap 5
 
@@ -338,3 +365,41 @@ Distributed under the **MIT** License. See [`LICENSE`](LICENSE) for more informa
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/laravel-template.svg?style=for-the-badge
 [commits]: https://github.com/klaasnicolaas/laravel-template/commits/master
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/laravel-template.svg?style=for-the-badge
+
+
+
+
+## Laravel Blog Template [STATIC]
+This is the official repository for my upcoming YouTube tutorials. <br>
+•	Author: Code With Dary <br>
+•	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
+•	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
+
+## Usage <br>
+Setup the repository <br>
+```
+git clone git@github.com:codewithdary/laravel-blog-template.git
+cd laravel-blog-template
+composer install
+cp .env.example .env 
+php artisan key:generate
+php artisan cache:clear && php artisan config:clear 
+php artisan serve 
+```
+
+Create dummy data
+```
+php artisan tinker
+```
+
+Run the following commands (order matters)
+```
+User::factory()->times(10)->create();
+Post::factory()->times(20)->create();
+Tag::factory()->times(4)->create();
+```
+
+Finally, let's add data inside our pivot table through our database seeder.
+```
+php artisan db:seed
+```
