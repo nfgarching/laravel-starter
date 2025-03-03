@@ -10,15 +10,15 @@
 <ul class="nav flex-column">
 
     <li class="dropdown-item">
-        <x-nav.link href="#">
+        <x-bs.nav.link href="#">
             {{ __('Link #1') }}
-        </x-nav.link>
+        </x-bs.nav.link>
     </li>
 
     <li class="dropdown-item">
-        <x-nav.link href="#">
+        <x-bs.nav.link href="#">
             {{ __('Link #2') }}
-        </x-nav.link>
+        </x-bs.nav.link>
     </li>
 
 </ul>

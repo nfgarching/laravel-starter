@@ -34,18 +34,18 @@
 
                             {{-- {{ auth()->user() }} --}}
 
-                            <x-nav.link :href="route('settings.profile')">
+                            <x-bs.nav.link :href="route('settings.profile')">
                                 {{ __('Profile') }}
-                            </x-nav.link>
+                            </x-bs.nav.link>
                         </li>
                         <li class="nav-item">
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <x-nav.link :href="route('logout')"
+                                <x-bs.nav.link :href="route('logout')"
                                     onclick="event.preventDefault(); this.closest('form').submit();">
                                     {{ __('Log Out') }}
-                                </x-nav.link>
+                                </x-bs.nav.link>
                             </form>
                         </li>
 

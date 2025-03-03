@@ -2,7 +2,7 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head> @include('partials.head') </head>
+<head> @include('components.layouts.app.head') </head>
 
 <body>
 
@@ -36,7 +36,7 @@
                 @if (isset($footer))
                     {{ $footer }}
                 @else
-                    {{-- @include('components.layouts.footer') --}}
+                    @include('components.layouts.app.footer')
                 @endif
             </main>
             <!--Container Main end-->

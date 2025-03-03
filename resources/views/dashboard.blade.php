@@ -1,37 +1,36 @@
 <x-layouts.app>
 
-    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        <hr>
+    </x-slot>
 
-        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern
-                    class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-
-                    <i class = "bi bi-alarm">icon</i>
-
+        <div class="col">
+            <div class="card">
+                <div class="placeholder bg-primary" style="width: 100%; height: 250px;"></div>
             </div>
-
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern
-                    class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-
-                    <i class="bi bi-person-fill"></i>
-
-            </div>
-
-            <div
-                class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern
-                    class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
-
         </div>
 
-        <div class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
+        <div class="col">
+            <div class="card">
+                <div class="placeholder bg-secondary" style="width: 100%; height: 250px;"></div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="placeholder bg-success" style="width: 100%; height: 250px;"></div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="placeholder bg-info" style="width: 100%; height: 250px;"></div>
+            </div>
         </div>
 
     </div>

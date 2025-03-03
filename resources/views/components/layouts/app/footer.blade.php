@@ -11,13 +11,13 @@
 
     <div class="btn-group btn-group-sm float-end">
         @if (url()->current() . '/' != url()->previous())
-            <x-button.link :href="old(' url', url()->previous())">
+            <x-bs.button.link :href="old(' url', url()->previous())" type="outline-secondary">
                 <i class="bi bi-arrow-left-square"></i> &nbsp; Zurück
-            </x-button.link>
+            </x-bs.button.link>
         @endif
-        <x-button.link href="#">
+        <x-bs.button.link href="#" type="outline-secondary">
             <i class="bi bi-arrow-up-square"></i> &nbsp; Oben
-        </x-button.link>
+        </x-bs.button.link>
     </div>
 
 </div>

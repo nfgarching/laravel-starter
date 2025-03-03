@@ -4,46 +4,28 @@
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 
-    <form wire:submit="resetPassword" class="flex flex-col gap-6">
+    <form wire:submit="resetPassword">
+
         <!-- Email Address -->
-        <flux:input
-            wire:model="email"
-            id="email"
-            :label="__('Email')"
-            type="email"
-            name="email"
-            required
-            autocomplete="email"
-        />
+        <div class="mb-3">
+            <x-bs.field.input field="email" type="email" />
+        </div>
 
         <!-- Password -->
-        <flux:input
-            wire:model="password"
-            id="password"
-            :label="__('Password')"
-            type="password"
-            name="password"
-            required
-            autocomplete="new-password"
-            placeholder="Password"
-        />
+        <div class="mb-3">
+            <x-bs.field.input field="password" type="password" />
+        </div>
 
         <!-- Confirm Password -->
-        <flux:input
-            wire:model="password_confirmation"
-            id="password_confirmation"
-            :label="__('Confirm password')"
-            type="password"
-            name="password_confirmation"
-            required
-            autocomplete="new-password"
-            placeholder="Confirm password"
-        />
-
-        <div class="flex items-center justify-end">
-            <flux:button type="submit" variant="primary" class="w-full">
-                {{ __('Reset password') }}
-            </flux:button>
+        <div class="mb-3">
+            <x-bs.field.input field="password_confirmation" label="Confirm Password" type="password" />
         </div>
+
+        <div class="form-check form-switch">
+            <button type="submit" class="btn btn-primary float-end">
+                {{ __('Reset password') }}
+            </button>
+        </div>
+
     </form>
 </div>

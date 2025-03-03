@@ -1,26 +1,31 @@
- <div class="flex flex-col gap-6">
-    <x-auth-header title="Forgot password" description="Enter your email to receive a password reset link" />
+ <div>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="text-center" :status="session('status')" />
+     <x-auth-header title="Forgot password" description="Enter your email to receive a password reset link" />
 
-    <form wire:submit="sendPasswordResetLink" class="flex flex-col gap-6">
-        <!-- Email Address -->
-        <flux:input
-            wire:model="email"
-            :label="__('Email Address')"
-            type="email"
-            name="email"
-            required
-            autofocus
-            placeholder="email@example.com"
-        />
+     <!-- Session Status -->
+     <x-auth-session-status class="text-center" :status="session('status')" />
 
-        <flux:button variant="primary" type="submit" class="w-full">{{ __('Email password reset link') }}</flux:button>
-    </form>
+     <form wire:submit="sendPasswordResetLink" class="flex flex-col gap-6">
 
-    <div class="space-x-1 text-center text-sm text-zinc-400">
-        Or, return to
-        <flux:link :href="route('login')" wire:navigate>log in</flux:link>
-    </div>
-</div>
+         <!-- Email Address -->
+         <div class="mb-3">
+             <x-bs.field.input field="email" type="email" :label="__('Email Address')" />
+         </div>
+
+         <div class="form-check form-switch">
+             <button type="submit" class="btn btn-primary float-end">
+                 {{ __('Email password reset link') }}
+             </button>
+         </div>
+
+     </form>
+
+     <br>
+     <hr>
+     <div class="form-check form-switch">
+         <a class="nav-link" href="{{ route('login') }}" role="button" wire:navigate>
+             Or, return to Log in
+         </a>
+     </div>
+
+ </div>

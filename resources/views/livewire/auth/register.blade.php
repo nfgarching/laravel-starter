@@ -8,35 +8,22 @@
 
         <!-- Name -->
         <div class="mb-3">
-            <label for="InputName" class="form-label">Name</label>
-            <input wire:model="name" type="text" class="form-control" id="InputName" placeholder="Full Name">
+            <x-bs.field.input field="name" />
         </div>
 
         <!-- Email Address -->
         <div class="mb-3">
-            <label for="InputEmail" class="form-label">Email address</label>
-            <input wire:model="email" type="email" class="form-control" id="InputEmail"
-                placeholder="email@example.com">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <x-bs.field.input field="email" type="email" />
         </div>
 
         <!-- Password -->
         <div class="mb-3">
-            <label for="InputPassword" class="form-label">Password</label>
-            <div class="input-group has-validation">
-                <input wire:model="password" type="password" class="form-control" id="InputPassword"
-                    placeholder="Password">
-                <div class="invalid-feedback">
-                    Please choose a username.
-                </div>
-            </div>
+            <x-bs.field.input field="password" type="password" />
         </div>
 
         <!-- Confirm Password -->
         <div class="mb-3">
-            <label for="InputConfirmPassword" class="form-label">Confirm Password</label>
-            <input wire:model="password_confirmation" type="password" class="form-control" id="InputConfirmPassword"
-                placeholder="Confirm password">
+            <x-bs.field.input field="password_confirmation" label="Confirm Password" type="password" />
         </div>
 
         <div class="form-check form-switch">
@@ -50,8 +37,9 @@
     <br>
     <hr>
     <div class="form-check form-switch">
-        <a class="nav-link" href="{{ route('login') }}" role="button" wire:navigate>Already have an account?
-            Log in</a>
+        <a class="nav-link" href="{{ route('login') }}" role="button" wire:navigate>
+            Already have an account? Log in
+        </a>
     </div>
 
 </div>
