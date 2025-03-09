@@ -1,20 +1,41 @@
-<div class="flex items-start max-md:flex-col">
-    <div class="mr-10 w-full pb-4 md:w-[220px]">
-        <flux:navlist>
-            <flux:navlist.item :href="route('settings.profile')" wire:navigate>{{ __('Profile') }}</flux:navlist.item>
-            <flux:navlist.item :href="route('settings.password')" wire:navigate>{{ __('Password') }}</flux:navlist.item>
-            <flux:navlist.item :href="route('settings.appearance')" wire:navigate>{{ __('Appearance') }}</flux:navlist.item>
-        </flux:navlist>
-    </div>
+<x-bs.card>
 
-    <flux:separator class="md:hidden" />
+    <x-slot name="header"></x-slot>
 
-    <div class="flex-1 self-stretch max-md:pt-6">
-        <flux:heading>{{ $heading ?? '' }}</flux:heading>
-        <flux:subheading>{{ $subheading ?? '' }}</flux:subheading>
+    <div class="row">
 
-        <div class="mt-5 w-full max-w-lg">
-            {{ $slot }}
+        <div class="col-3">
+
+            <div class="list-group">
+                <a href="{{ route('settings.profile') }}"
+                    class="list-group-item list-group-item-action @if (url()->current() == route('settings.profile')) active @endif">
+                    {{ __('Profile') }}
+                </a>
+                <a href="{{ route('settings.password') }}"
+                    class="list-group-item list-group-item-action @if (url()->current() == route('settings.password')) active @endif">
+                    {{ __('Password') }}
+                </a>
+                <a href="{{ route('settings.appearance') }}"
+                    class="list-group-item list-group-item-action @if (url()->current() == route('settings.appearance')) active @endif disabled">
+                    {{ __('Appearance') }}
+                </a>
+            </div>
+
         </div>
+
+        <div class="col-9">
+
+            <p class="fs-4">{{ $heading ?? '' }}</p>
+            <p class="fs-6">{{ $subheading ?? '' }}</p>
+
+            <hr>
+
+            <div class="">
+                {{ $slot }}
+            </div>
+
+        </div>
+
     </div>
-</div>
+
+</x-bs.card>

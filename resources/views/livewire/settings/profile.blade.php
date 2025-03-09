@@ -1,4 +1,4 @@
-<section>
+<div>
 
     <x-settings.head />
 
@@ -44,4 +44,4 @@
 
     </x-settings.layout>
 
-</section>
+</div>
