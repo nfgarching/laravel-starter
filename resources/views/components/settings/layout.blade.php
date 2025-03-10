@@ -16,7 +16,7 @@
                     {{ __('Password') }}
                 </a>
                 <a href="{{ route('settings.appearance') }}"
-                    class="list-group-item list-group-item-action @if (url()->current() == route('settings.appearance')) active @endif disabled">
+                    class="list-group-item list-group-item-action @if (url()->current() == route('settings.appearance')) active @endif">
                     {{ __('Appearance') }}
                 </a>
             </div>

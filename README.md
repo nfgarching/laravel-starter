@@ -1,12 +1,27 @@
 # Laravel 12 Template with Livewire Auth + Bootstrap 5.3
 
-## About This Template
+## About this template
 
-Laravel is a web application framework with expressive, elegant syntax. This template comes with Livewire Auth and Bootstrap CDN. Optional You can use node_modules or sail.
+This is a laravel template repository project, which can be used as a basis for future projects. This template comes with Livewire Auth and Bootstrap 5 CDN. Optional You can use node_modules or sail.
+
+## Features
+
+The Laravel template project comes with the following features:
+
+- [Laravel 12.x](https://laravel.com/)
+- [Bootstrap 5](https://getbootstrap.com/)
+- [Filament PHP][filament] (admin dashboard)
+- [Filament Shield][shield] (roles and permissions)
+- [Devcontainer][devcontainer] for Visual Studio Code
+- [GIthub Actions](.github/workflows) for CI/CD on Github
+- [Pest](.github/workflows/tests.yaml)
+- [Pint](.github/workflows/linting.yaml)
+- [Larastan](.github/workflows/typing.yaml)
+
 
 ## Installation
 
-### Create the project with composer:
+### Create the project with composer
 
 ```bash
 composer create-project nfgarching/laravel-starter {project_name} --stability=dev
@@ -16,19 +31,19 @@ composer create-project nfgarching/laravel-starter --repository-url=http://repo.
 ### Clone template
 
 ``` bash
-# clone the repo
-git clone  my-project
+# Clone the repo
+git clone git@github.com:nfgarching/laravel-starter.git {my-project}
 
-# go into app's directory
-cd my-project
+# Go into app's directory
+cd {my-project}
 
-# install app's dependencies
+# Install app's dependencies
 composer install
-
-# install app's dependencies
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+
+# Start application
 php artisan serve
 
 ```
@@ -43,11 +58,19 @@ git fetch --all
 git merge template/main --allow-unrelated-histories
 ```
 
-## Bootstrap 5
+### Install with [sail](https://laravel.com/docs/12.x/sail#installing-sail-into-existing-applications)
 
-### Default with CDN
+``` bash
+composer require laravel/sail --dev
+php artisan sail:install
+./vendor/bin/sail up
+```
 
-### Alt. with sail
+## Use of Bootstrap 5
+
+### Default with [CDN](https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links)
+
+Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps.
 
 ### Alt. with vite
 
@@ -112,27 +135,6 @@ php artisan cache:forget spatie.permission.cache
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-## About
-
-This is a laravel template repository project, which can be used as a basis for future projects. Based on the TALL stack and packed with useful features to get started right away.
-
-## Features
-
-The Laravel template project comes with the following features:
-
-- PHP 8.3
-- Laravel 11.x
-- [Laravel Sail][sail] (docker)
-- [Laravel Backup][backup] (from spatie)
-- [Log Viewer][log-viewer]
-- [Clockwork][clockwork] (debugging)
-- [Filament PHP][filament] (admin dashboard)
-- [Filament Shield][shield] (roles and permissions)
-- [Devcontainer][devcontainer] for Visual Studio Code
-- [GIthub Actions](.github/workflows) for CI/CD on Github
-- [Pest](.github/workflows/tests.yaml)
-- [Pint](.github/workflows/linting.yaml)
-- [Larastan](.github/workflows/typing.yaml)
 
 ## Roles and permissions
 
