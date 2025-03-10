@@ -68,24 +68,44 @@ php artisan sail:install
 ./vendor/bin/sail up
 ```
 
-Bei Fehlermeldung SQLSTATE[HY000] [2002] Connection refused (Connection: mysql, SQL: select * from `sessions` where `id` = ... limit 1)
-
-``` bash
-composer require laravel/sail --dev
-php artisan sail:install
-./vendor/bin/sail up
-```
-
 ## Use of Bootstrap 5
 
 ### Default with [CDN](https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-links)
 
-Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps.
+Template include Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps.
 
-### Optional install with vite
+### Optional install Bootsrap 5 with [Vite](https://laravel.com/docs/12.x/vite)
+
+Goto directory resource/views/components/layouts/app/
+
+Remove in head.blade.php
+
+``` html
+<!-- Bootstrap CSS + Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+```
+
+Add in head.blade.php
+
+``` html
+@vite(['resources/css/app.scss', 'resources/js/app.js'])
+```
+
+Remove in script.blade.php
+
+``` html
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
+```
+
+Running Vite
 
 ``` bash
-cd example-app
+cd {my-project}
 npm install && npm run build
 composer run dev
 ```
