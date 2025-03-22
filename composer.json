@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/livewire-starter-kit",
+    "name": "nfgarching/laravel-starter",
     "type": "project",
     "description": "Laravel 12 Template with Livewire Auth + Bootstrap 5.3",
     "keywords": [
